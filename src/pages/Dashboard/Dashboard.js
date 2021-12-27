@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    Container, Cards, Card, CardIcon, CardBody,
+    Cards, Card, CardIcon, CardBody,
     Row, Column, ColumnHeader, ColumnBody,
     Register, RegisterImage,
     Group
@@ -11,7 +11,7 @@ import { faUserTie, faImages, faClipboard, faUsers, faBox, faBoxes, faEnvelope, 
 
 const Dashboard = function() {
     return(
-        <Container>
+        <div className="container">
             <h2 className="page-title">Dashboard</h2>
             <Cards>
                 <Card>
@@ -135,7 +135,7 @@ const Dashboard = function() {
                     </ColumnBody>
                 </Column>
             </Row>
-        </Container>
+        </div>
     );
 }
 

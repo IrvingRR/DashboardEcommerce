@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const Container = styled.div`
-    width: 100%;
-`;
-
 export const Cards = styled.div`
     width: 100%;
     display: grid;
@@ -63,7 +59,7 @@ export const Column = styled.div`
     border-radius: var(--border-radius);
     gap: 10px;
     overflow: auto;
-
+ 
     @media only screen and (max-width: 768px) {
         width: 100%;
     }
@@ -94,12 +90,18 @@ export const Register = styled(Link)`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     padding: 10px;
     border-bottom: 1px solid var(--light-gray);
     color: var(--font-color);
     transition: var(--transition);
     border-radius: var(--border-radius);
+
+    .register-title,
+    .register-description,
+    .register-date {
+        font-size: 13px;
+    }
 
     &:hover {
         background: var(--light-gray);
@@ -109,12 +111,6 @@ export const Register = styled(Link)`
 
         flex-direction: column;
         align-items: flex-start;
-
-        .register-title,
-        .register-description,
-        .register-date {
-            font-size: 13px;
-        }
     }
 `;
 

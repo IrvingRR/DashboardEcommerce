@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <div className="container">
+        <div className="global-container">
           <Sidebar reduceSidebar={reduceSidebar} />
           <main className="main">
             <Header reduceSidebar={reduceSidebar} setReduceSidebar={ setReduceSidebar}/>

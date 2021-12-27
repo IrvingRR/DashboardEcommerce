@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faSearch, faAngleDown,faBell, faEnvelope, faClipboardCheck,
 faUser, faCog, faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
-import { Form, FormGroup, FormInput } from '../Form/Styles';
+import { Form, FormGroupInput, FormInput } from '../Form/Styles';
 import Modal from '../Modal/Modal';
 import {
     Container,
@@ -48,10 +48,10 @@ const Header = function({reduceSidebar, setReduceSidebar}) {
                 <FontAwesomeIcon icon={faBars}/>
             </SidebarToggle>
             <Form className="form-search-header">
-                <FormGroup>
+                <FormGroupInput>
                     <FormInput type="text" name="search" placeholder="Buscar" autoComplete="off" />
                     <FontAwesomeIcon icon={faSearch} />
-                </FormGroup>
+                </FormGroupInput>
             </Form>
             <Group>
                 <ButtonIcon onClick={handleNotifications}>

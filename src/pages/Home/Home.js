@@ -1,11 +1,11 @@
 import React from 'react';
-import { Container, Cards, Card, CardHeader, CardBody } from './Styles';
+import { Cards, Card, CardHeader, CardBody } from './Styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDesktop, faLaptop, faClipboard, faUsers, faEnvelope, faPlus, faSearch, faMobileAlt, faTabletAlt} from '@fortawesome/free-solid-svg-icons';
 
 const Home = function() {
     return(
-        <Container>
+        <div className="container">
             <h2 className="page-title">Home</h2>
            <Cards>
                 <Card>
@@ -74,7 +74,7 @@ const Home = function() {
                 </CardBody>
             </Card>
            </Cards>
-        </Container>
+        </div>
     );
 }
 

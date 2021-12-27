@@ -1,8 +1,13 @@
 import React from 'react';
+import FormSearch from '../../components/Form/FormSearch';
 
 const Users = function() {
+
     return(
-        <h2 className="page-title">Users</h2>
+        <div className="container">
+            <h2 className="page-title">Users</h2>
+            <FormSearch />
+        </div>
     );
 }
 

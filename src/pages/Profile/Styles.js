@@ -1,73 +1,69 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Row = styled.div`
     width: 100%;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 20px;
+    padding: 20px 0;
+    margin: auto;
 
-    .container-flex-center {
-        width: 100%;
+    @media only screen and (max-width: 768px) {
+        grid-template-columns: repeat(1, minmax(250px, 1fr));
+    }
+`;
+
+export const Column = styled.div`
+    border: 1px solid var(--gray);
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    position: relative;
+
+    @media only screen and (max-width: 375px) {
+        padding: 20px 0;
+    }
+`;
+
+export const ColumnHeader = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+
+    .user-type {
         display: flex;
-        justify-content: center;
         align-items: center;
+        gap: 10px;
+        padding: 10px 20px;
+        border-radius: var(--border-radius);
+        border: 1px solid var(--gray);
+        font-weight: 600;
+        background: var(--gray);
+    }
+
+    .user-status {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+
+        svg {color: var(--primary);}
     }
 `;
 
-export const BackgroundImage = styled.img`
-    width: 100%;
-    min-height: 400px;
-`;
-
-export const Card = styled.div`
-    width: 100%;
-    max-width: 500px;
-    border-radius: var(--border-radius);
-    position: relative;
-    overflow: hidden;
-    
-    &::before {
-        content: "";
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.4);
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-`;
-
-export const CardInformation = styled.div`
-    width: 90%;
-    background: #fff;
-    border-radius: var(--border-radius);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    box-shadow: var(--shadow);
-`;
-
-export const CardHeader = styled.div`
-    width: 100%;
-    height: 100px;
-    border-radius: var(--border-radius);
-    position: relative;
-`
-export const CardImage = styled.img`
-    width: 100px;
-    height: 100px;
+export const ColumnImage = styled.img`
+    width: 150px;
+    height: 150px;
     border-radius: 100%;
-    position: absolute;
-    bottom: 50px;
-    left: 0;
-    right: 0;
-    margin: auto;
     border: 5px solid #fff;
 `;
 
-export const CardBody = styled.div`
+export const ColumnFooter = styled.div`
     width: 100%;
     padding: var(--padding);
     display: flex;
-    flex-direction: column;
+    align-items: center;
     gap: 10px;
 `;
