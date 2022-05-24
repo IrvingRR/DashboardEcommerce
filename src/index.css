@@ -93,6 +93,9 @@ p {
 
 .page-title {
   color: var(--font-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .page-title span {

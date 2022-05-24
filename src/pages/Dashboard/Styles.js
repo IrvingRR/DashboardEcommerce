@@ -15,10 +15,11 @@ export const Card = styled.div`
     border: 1px solid var(--gray);
     border-radius: var(--border-radius);
     margin: auto;
+    overflow: hidden;
 `;
 
 export const CardIcon = styled.div`
-    width: 100px;
+    width: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,11 +34,11 @@ export const CardBody = styled.div`
     align-items: center;
     gap: 10px;
     padding: var(--padding);
-
+    
     .card-number {
         font-size: 15px;
+        /* font-weight: 700; */
         color: var(--primary);
-        font-weight: 600;
     }
 `;
 

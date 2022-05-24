@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserTie, faImages, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Row, Column, ColumnHeader, ColumnImage, ColumnFooter } from './Styles';
-import { Form, FormGroup, FormGroupInput, Label, FormButton, FormButtonFile, LegendError } from '../../components/Form/Styles';
+import { Form, FormGroup, FormGroupInput, FormBody, FormFooter, Label, FormButton, FormButtonFile, LegendError } from '../../components/Form/Styles';
 import Input from '../../components/Form/Input';
 import { useForm } from '../../hooks/useForm';
 import { Toaster, toast } from 'react-hot-toast';
@@ -56,48 +56,53 @@ const Profile = function() {
                     </ColumnHeader>
                 </Column>
                 <Column>
-                    <Form className="form-grid" onSubmit={handleSubmit}>
-                        <FormGroup>
-                            <Label>Name:</Label>
-                            <FormGroupInput>
-                                <Input type="text" name="name" placeholder="Name" handleChange={handleChange} expression={expressions.name} valid={form.name.valid !== null && form.name.valid.toString()}/>
-                            </FormGroupInput>
-                            <LegendError valid={form.name.valid !== null && form.name.valid.toString()} >Only letters and maximun 40 characters</LegendError>
-                        </FormGroup> 
-                        <FormGroup>
-                            <Label>Lastname:</Label>
-                            <FormGroupInput>
-                                <Input type="text" name="lastname" placeholder="Lastname" handleChange={handleChange} expression={expressions.lastname} valid={form.lastname.valid !== null && form.lastname.valid.toString()}/>
-                            </FormGroupInput>
-                            <LegendError valid={form.lastname.valid !== null && form.lastname.valid.toString()}>Only letters and maximun 40 characters</LegendError>
-                        </FormGroup> 
-                        <FormGroup>
-                            <Label>Phone:</Label>
-                            <FormGroupInput>
-                                <Input type="text" name="phone" placeholder="Phone" handleChange={handleChange} expression={expressions.phone} valid={form.phone.valid !== null && form.phone.valid.toString()}/>
-                            </FormGroupInput>
-                            <LegendError valid={form.phone.valid !== null && form.phone.valid.toString()}>Only numbers and minium 10 characters</LegendError>
-                        </FormGroup> 
-                        <FormGroup>
-                            <Label>Email address:</Label>
-                            <FormGroupInput>
-                                <Input type="email" name="email" value={form.email.value} disabled/>
-                            </FormGroupInput>
-                        </FormGroup> 
-                        <FormGroup>
-                            <Input type="file" name="image" />
-                            <FormButtonFile>
-                                <FontAwesomeIcon icon={faImages}/>
-                                Change image
-                            </FormButtonFile>
-                        </FormGroup> 
-                            <FormButton>Update</FormButton>
+                    <Form  onSubmit={handleSubmit}>
+                        <FormBody className="form-grid">
+                            <FormGroup>
+                                <Label>Name:</Label>
+                                <FormGroupInput>
+                                    <Input type="text" name="name" placeholder="Name" handleChange={handleChange} expression={expressions.name} valid={form.name.valid !== null && form.name.valid.toString()}/>
+                                </FormGroupInput>
+                                <LegendError valid={form.name.valid !== null && form.name.valid.toString()} >Only letters and maximun 40 characters</LegendError>
+                            </FormGroup> 
+                            <FormGroup>
+                                <Label>Lastname:</Label>
+                                <FormGroupInput>
+                                    <Input type="text" name="lastname" placeholder="Lastname" handleChange={handleChange} expression={expressions.lastname} valid={form.lastname.valid !== null && form.lastname.valid.toString()}/>
+                                </FormGroupInput>
+                                <LegendError valid={form.lastname.valid !== null && form.lastname.valid.toString()}>Only letters and maximun 40 characters</LegendError>
+                            </FormGroup> 
+                            <FormGroup>
+                                <Label>Phone:</Label>
+                                <FormGroupInput>
+                                    <Input type="text" name="phone" placeholder="Phone" handleChange={handleChange} expression={expressions.phone} valid={form.phone.valid !== null && form.phone.valid.toString()}/>
+                                </FormGroupInput>
+                                <LegendError valid={form.phone.valid !== null && form.phone.valid.toString()}>Only numbers and minium 10 characters</LegendError>
+                            </FormGroup> 
+                            <FormGroup>
+                                <Label>Email address:</Label>
+                                <FormGroupInput>
+                                    <Input type="email" name="email" value={form.email.value} disabled/>
+                                </FormGroupInput>
+                            </FormGroup> 
+                            <FormGroup>
+                                <Label>Image:</Label>
+                                <FormGroupInput>
+                                    <Input type="file" name="image" />
+                                    <FormButtonFile type="button">
+                                        <FontAwesomeIcon icon={faImages}/>
+                                        Change image
+                                    </FormButtonFile>
+                                </FormGroupInput>
+                            </FormGroup> 
+                        </FormBody>
+                        <FormFooter>
+                                <FormButton>Update</FormButton>
+                        </FormFooter>
                     </Form>
-                    <ColumnFooter>
-                    </ColumnFooter>
                 </Column>
             </Row>
-            <Toaster position='bottom-right' />
+            <Toaster />
         </div>
     );
 }

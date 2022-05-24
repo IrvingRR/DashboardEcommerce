@@ -8,24 +8,6 @@ export const Form = styled.form`
     text-align: center;
     /* margin: auto; */
 
-    &.form-flex-row {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 20px 0;
-        max-width: 400px;
-    }
-
-    &.form-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 10px;
-
-        @media only screen and (max-width: 425px) {
-            grid-template-columns: 1fr;
-        }
-    }
-
     &.form-search-header {
         max-width: 500px;
     }
@@ -45,9 +27,9 @@ export const Form = styled.form`
 
 export const FormGroup = styled.div`
     width: 100%;
+    max-height: 90px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
     position: relative;
     transition: var(--transition);
 `;
@@ -64,6 +46,36 @@ export const FormGroupInput = styled.div`
         right: 20px;
         font-size: 15px;
     }
+`;
+
+export const FormBody = styled.div`
+    width: 100%;
+
+    &.form-flex-row {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 20px 0;
+        max-width: 400px;
+    }
+
+    &.form-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 5px;
+
+        @media only screen and (max-width: 425px) {
+            grid-template-columns: 1fr;
+        }
+    }
+`;
+
+export const FormFooter = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0;
 `;
 
 export const FormInput = styled.input`
@@ -92,7 +104,6 @@ export const FormInput = styled.input`
             color: red;
             border-color: red;
         `}
-
     }
 
     &[type="file"] {display: none;}
@@ -143,14 +154,13 @@ export const LegendError = styled.p`
     display: flex;
     align-items: center;
     transition: var(--transition);
+    font-size: 13px;
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-5px);
-    font-size: 13px;
-
+    transform: translateY(-10px);
+    
     ${props => props.valid === 'false' && css`
-        padding: 3px 0;
         opacity: 1;
         visibility: visible;
         transform: translateY(0);

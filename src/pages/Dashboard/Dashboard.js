@@ -6,13 +6,16 @@ import {
     Group
 } from './Styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserTie, faImages, faClipboard, faUsers, faBox, faBoxes, faEnvelope, faCalculator} from '@fortawesome/free-solid-svg-icons';
+import { faUserTie, faTachometerAlt, faImages, faClipboard, faUsers, faBox, faBoxes, faEnvelope, faCalculator} from '@fortawesome/free-solid-svg-icons';
 
 
 const Dashboard = function() {
     return(
         <div className="container">
-            <h2 className="page-title">Dashboard</h2>
+            <h2 className="page-title">
+                <FontAwesomeIcon icon={faTachometerAlt} />
+                Dashboard
+                </h2>
             <Cards>
                 <Card>
                     <CardIcon>

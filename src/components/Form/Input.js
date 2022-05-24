@@ -13,9 +13,9 @@ const Input = function ({type, name, placeholder, disabled, valid, value, expres
             disabled={disabled && disabled}
             expression={expression}
             onChange={functionChange}
-            autoComplete="off"
             valid={valid}
             value={value && value}
+            autoComplete="off"
         />
     );
 }

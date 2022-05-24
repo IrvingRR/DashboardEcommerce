@@ -112,6 +112,7 @@ export const Notifications = styled.div`
     border-radius: var(--border-radius);
     overflow: hidden;
     transition: var(--transition);
+    z-index: 99;
 
     ${props => props.showNotifications === 'true' && css`
         height: auto;
@@ -172,6 +173,7 @@ export const UserOptions = styled.div`
     border-radius: var(--border-radius);
     overflow: hidden;
     transition: var(--transition);
+    z-index: 99;
 
     ${props => props.showUserOptions === 'true' && css`
         height: auto;
